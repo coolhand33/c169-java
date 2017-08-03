@@ -26,11 +26,16 @@ public class Main
         for( String student : students )
         {
             String[] studentInfo = student.split(",");
-            String id = studentInfo[0];
-            String fName = studentInfo[1];
-            String lName = studentInfo[2];
             Student tempStudent = new Student(id);
+            tempStudent.addFirstName(studentInfo[1]);
+            tempStudent.addLastName(studentInfo[2]);
+            tempStudent.addEmail(studentInfo[3]);
+            tempStudent.addAge(studentInfo[4]);
+            tempStudent.addScore(studentInfo[5]);
+            tempStudent.addScore(studentInfo[6]);
+            tempStudent.addScore(studentInfo[7]);
             
+            this.studentList.add(tempStudent);
         }
         
     }
