@@ -15,7 +15,7 @@ public class Student
     private String lastName;
     private String email;
     private int age;
-    private ArrayList<int> score;
+    private ArrayList<Integer> score;
     
 
     /**
@@ -29,7 +29,7 @@ public class Student
         this.lastName = "";
         this.email = "";
         this.age = 0;
-        this.score = new ArrayList<int>();
+        this.score = new ArrayList<Integer>();
     }
 
     /**
@@ -57,7 +57,7 @@ public class Student
      *
      * @param  email is the email address passed in
      */
-    public void email(String email)
+    public void addEmail(String email)
     {
         this.email = email;
     }

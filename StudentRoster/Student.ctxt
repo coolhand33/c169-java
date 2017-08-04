@@ -1,10 +1,21 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=id
 comment1.target=Student(int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n
 comment2.params=fname
 comment2.target=void\ addFirstName(java.lang.String)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-numComments=3
+comment2.text=\r\n\ This\ method\ adds\ a\ first\ name\ to\ the\ Student\r\n\r\n\ @param\ \ fname\ is\ the\ first\ name\ passed\ in\r\n
+comment3.params=lname
+comment3.target=void\ addLastName(java.lang.String)
+comment3.text=\r\n\ This\ method\ adds\ a\ last\ name\ to\ the\ Student\r\n\r\n\ @param\ \ fname\ is\ the\ last\ name\ passed\ in\r\n
+comment4.params=email
+comment4.target=void\ addEmail(java.lang.String)
+comment4.text=\r\n\ This\ method\ adds\ an\ email\ to\ the\ Student\r\n\r\n\ @param\ \ email\ is\ the\ email\ address\ passed\ in\r\n
+comment5.params=age
+comment5.target=void\ addAge(int)
+comment5.text=\r\n\ This\ method\ adds\ an\ age\ to\ the\ Student\r\n\r\n\ @param\ \ age\ is\ the\ age\ passed\ in\r\n
+comment6.params=score
+comment6.target=void\ addScore(int)
+comment6.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+numComments=7

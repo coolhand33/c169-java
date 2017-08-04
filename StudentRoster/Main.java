@@ -21,22 +21,7 @@ public class Main
             "5,Clint,Broadhead,cbroadh@wgu.edu,32,100,100,100"
         };
         
-        ArrayList<Student> studentList = new ArrayList<Student>();
-        
-        for( String student : students )
-        {
-            String[] studentInfo = student.split(",");
-            Student tempStudent = new Student(id);
-            tempStudent.addFirstName(studentInfo[1]);
-            tempStudent.addLastName(studentInfo[2]);
-            tempStudent.addEmail(studentInfo[3]);
-            tempStudent.addAge(studentInfo[4]);
-            tempStudent.addScore(studentInfo[5]);
-            tempStudent.addScore(studentInfo[6]);
-            tempStudent.addScore(studentInfo[7]);
-            
-            this.studentList.add(tempStudent);
-        }
+        Roster studentRoster = new Roster(students);
         
     }
 }
