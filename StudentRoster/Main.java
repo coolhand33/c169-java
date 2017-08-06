@@ -1,6 +1,6 @@
 
 /**
- * This is the main program that will build and run my Student Roster app
+ * This is the main program that will act as the interface for my Student Roster app
  *
  * @author Clint Broadhead <cbroadh@wgu.edu>
  * @version 0.0.1
@@ -20,6 +20,13 @@ public class Main
             "4,Erin,Black,Erin.black@comcast.net,22,91,98,82",
             "5,Clint,Broadhead,cbroadh@wgu.edu,32,100,100,100"
         };
+        
+        ArrayList<Student> studentList = Convert.data(students);
+        
+        
+        
+        //take the created Student and add them to the roster
+        roster.add(tempStudent);
         
         Roster studentRoster = new Roster(students);
         

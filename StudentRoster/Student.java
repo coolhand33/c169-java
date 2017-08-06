@@ -15,29 +15,39 @@ public class Student
     private String lastName;
     private String email;
     private int age;
-    private ArrayList<Integer> score;
+    private ArrayList<Integer> scores;
     
 
     /**
      * Constructor for objects of class Student
      */
-    public Student(int id)
+    public Student()
     {
         // initialise instance variables
-        this.id = id;
+        this.id = 0;
         this.firstName = "";
         this.lastName = "";
         this.email = "";
         this.age = 0;
-        this.score = new ArrayList<Integer>();
+        this.scores = new ArrayList<Integer>();
     }
-
+    
+    /**
+     * This method adds an id to the Student
+     *
+     * @param  fname is the first name passed in
+     */
+    public void setFirstName(int id)
+    {
+        this.id = id;
+    }
+    
     /**
      * This method adds a first name to the Student
      *
      * @param  fname is the first name passed in
      */
-    public void addFirstName(String fname)
+    public void setFirstName(String fname)
     {
         this.firstName = fname;
     }
@@ -47,7 +57,7 @@ public class Student
      *
      * @param  fname is the last name passed in
      */
-    public void addLastName(String lname)
+    public void setLastName(String lname)
     {
         this.lastName = lname;
     }
@@ -57,7 +67,7 @@ public class Student
      *
      * @param  email is the email address passed in
      */
-    public void addEmail(String email)
+    public void setEmail(String email)
     {
         this.email = email;
     }
@@ -67,19 +77,78 @@ public class Student
      *
      * @param  age is the age passed in
      */
-    public void addAge(int age)
+    public void setAge(int age)
     {
         this.age = age;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Adds a score to the score arraylist
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  a score in integer form to be added
      */
-    public void addScore(int score)
+    public void setScore(int score)
     {
-        this.score.add(score);
+        this.scores.add(score);
+    }
+    
+    /**
+     * This method gets studentID of the Student
+     *
+     * @param  id is the first name passed in
+     */
+    public void getFirstName(int id)
+    {
+        return this.id;
+    }
+    
+    /**
+     * This method gets first name of the Student
+     *
+     * @param  fname is the first name passed in
+     */
+    public void getFirstName(String fname)
+    {
+        return this.firstName;
+    }
+    
+    /**
+     * This method gets a last name to the Student
+     *
+     * @param  fname is the last name passed in
+     */
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+    
+    /**
+     * This method gets the email of the Student
+     *
+     * @return  a string that contains the email address of the Student
+     */
+    public String getEmail()
+    {
+        return this.email;
+    }
+    
+    /**
+     * This method gets the age of the Student
+     *
+     * @return  age of Student
+     */
+    public int getAge(int age)
+    {
+        return this.age;
+    }
+    
+    /**
+     * Gets the scores of the Student
+     *
+     * @return  an array of the students scores
+     */
+    public ArrayList<Integer> getScores()
+    {
+        return this.scores;
     }
 }

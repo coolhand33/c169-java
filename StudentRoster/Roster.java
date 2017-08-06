@@ -32,14 +32,14 @@ public class Roster
             //index 5 and on are scores and are handled in a loop below
             
             Student tempStudent = new Student(id);
-            tempStudent.addFirstName(firstName);
-            tempStudent.addLastName(lastName);
-            tempStudent.addEmail(email);
-            tempStudent.addAge(age);
+            tempStudent.setFirstName(firstName);
+            tempStudent.setLastName(lastName);
+            tempStudent.setEmail(email);
+            tempStudent.setAge(age);
             //I am making it possible for more than just 3 scores to be added to the roster
             for(int i = 5; i < studentInfo.length; i++)
             {
-                tempStudent.addScore(Integer.parseInt(studentInfo[i]));
+                tempStudent.setScore(Integer.parseInt(studentInfo[i]));
             }
             
             //take the created Student and add them to the roster
@@ -48,9 +48,59 @@ public class Roster
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Adds a student to the roster
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  studentID is the id passed in
+     * @param  firstname is the students first name
+     * @param  lastname is the students last name
+     * @param  emailaddress is the students email
+     * @param  age is the students age
+     * @param  grade1 is the first score
+     * @param  grade2 is the second score
+     * @param  grade3 is the third score
+     * 
      */
+    
+    public static void add(String studentID, String firstname, String lastname, String emailaddress, int age, int grade1, int grade2, int grade3)
+    {
+        
+    }
+    
+    /**
+     * Removes a student from the roster
+     *
+     * @param  studentID is the id to remove from the array
+     * 
+     */
+    public static void remove(String studentID)
+    {
+        
+    }
+    
+    /**
+     * Prints all of the students info contained within the roster 
+     */
+    public static void print_all()
+    {
+    }
+    
+    /**
+     * Prints a student’s average grade
+     *
+     * @param  studentID is the id of the student
+     * 
+     */
+    public static void print_average_grade(String studentID)
+    {
+    }
+    
+    /**
+     * Verifies student e-mail addresses and displays all invalid e-mail addresses to the user
+     *
+     * 
+     */
+    public static void print_invalid_emails()
+    {
+    
+    }
 }
