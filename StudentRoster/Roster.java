@@ -14,7 +14,7 @@ public class Roster
     /**
      * Constructor for objects of class Roster
      */
-    public Roster(String[] studentData)
+    public Roster()
     {
         this.roster = new ArrayList<Student>();
         

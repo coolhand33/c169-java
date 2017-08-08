@@ -21,15 +21,15 @@ public class Student
     /**
      * Constructor for objects of class Student
      */
-    public Student()
+    public Student(int id, String firstName, String lastName, String email, int age, ArrayList<Integer> scores)
     {
         // initialise instance variables
-        this.id = 0;
-        this.firstName = "";
-        this.lastName = "";
-        this.email = "";
-        this.age = 0;
-        this.scores = new ArrayList<Integer>();
+        this.setId(id);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEmail(email);
+        this.setAge(age);
+        this.setScores(scores);
     }
     
     /**
@@ -37,7 +37,7 @@ public class Student
      *
      * @param  fname is the first name passed in
      */
-    public void setFirstName(int id)
+    public void setId(int id)
     {
         this.id = id;
     }
