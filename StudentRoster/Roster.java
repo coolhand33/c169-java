@@ -9,17 +9,26 @@ import java.util.ArrayList;
 
 public class Roster
 {
-    private ArrayList<Student> roster;
-    
+    static ArrayList<Student> studentList = new ArrayList<>();
     /**
      * Constructor for objects of class Roster
      */
     public Roster()
     {
-        this.roster = new ArrayList<Student>();
+    }
+    
+    public static void main(String[] args)
+    {
+        String [] students = 
+        {
+            "1,John,Smith,John1989@gmail.com,20,88,79,59", 
+            "2,Suzan,Erickson,Erickson_1990@gmailcom,19,91,72,85",
+            "3,Jack,Napoli,The_lawyer99yahoo.com,19,85,84,87",
+            "4,Erin,Black,Erin.black@comcast.net,22,91,98,82",
+            "5,Clint,Broadhead,cbroadh@wgu.edu,32,100,100,100"
+        };
         
-        //The studentData is an array of strings, this process aims to parse the strings into Student Objects.
-        for( String student : studentData )
+        for( String student : students )
         {
             //put comma separated data into an iterable format
             String[] studentInfo = student.split(",");
@@ -29,22 +38,13 @@ public class Roster
             String lastName = studentInfo[2];
             String email = studentInfo[3];
             int age = Integer.parseInt(studentInfo[4]);
-            //index 5 and on are scores and are handled in a loop below
-            
-            Student tempStudent = new Student(id);
-            tempStudent.setFirstName(firstName);
-            tempStudent.setLastName(lastName);
-            tempStudent.setEmail(email);
-            tempStudent.setAge(age);
-            //I am making it possible for more than just 3 scores to be added to the roster
-            for(int i = 5; i < studentInfo.length; i++)
-            {
-                tempStudent.setScore(Integer.parseInt(studentInfo[i]));
-            }
-            
-            //take the created Student and add them to the roster
-            roster.add(tempStudent);
-        }
+            int grade1 = Integer.parseInt(studentInfo[5]);
+            int grade2 = Integer.parseInt(studentInfo[6]);
+            int grade3 = Integer.parseInt(studentInfo[7]);
+        
+            //pass info to Roster.add to create Student and add them to the roster
+            Roster.add(id, firstName, lastName, email, age, grade1, grade2, grade3);
+        }   
     }
 
     /**
@@ -61,9 +61,16 @@ public class Roster
      * 
      */
     
-    public static void add(String studentID, String firstname, String lastname, String emailaddress, int age, int grade1, int grade2, int grade3)
+    public static void add(int studentID, String firstname, String lastname, String emailaddress, int age, int grade1, int grade2, int grade3)
     {
+        ArrayList<Integer> scores = new ArrayList<Integer>();
+        scores.add(grade1);
+        scores.add(grade2);
+        scores.add(grade3);
         
+        Student newStudent = new Student(studentID, firstname, lastname, emailaddress, age, scores);
+        
+        studentList.add(newStudent);
     }
     
     /**
@@ -72,9 +79,10 @@ public class Roster
      * @param  studentID is the id to remove from the array
      * 
      */
-    public static void remove(String studentID)
+    public static void remove(int studentID)
     {
-        
+        int index = studentList.indexOf(studentID);
+        studentList.remove(index);
     }
     
     /**

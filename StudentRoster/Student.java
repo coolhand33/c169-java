@@ -87,9 +87,9 @@ public class Student
      *
      * @param  a score in integer form to be added
      */
-    public void setScore(int score)
+    public void setScores(ArrayList<Integer> scores)
     {
-        this.scores.add(score);
+        this.scores = scores;
     }
     
     /**
@@ -97,7 +97,7 @@ public class Student
      *
      * @param  id is the first name passed in
      */
-    public void getFirstName(int id)
+    public int getId()
     {
         return this.id;
     }
@@ -107,7 +107,7 @@ public class Student
      *
      * @param  fname is the first name passed in
      */
-    public void getFirstName(String fname)
+    public String getFirstName()
     {
         return this.firstName;
     }
@@ -137,7 +137,7 @@ public class Student
      *
      * @return  age of Student
      */
-    public int getAge(int age)
+    public int getAge()
     {
         return this.age;
     }
@@ -150,5 +150,10 @@ public class Student
     public ArrayList<Integer> getScores()
     {
         return this.scores;
+    }
+    
+    public void print()
+    {
+        System.out.println("ID:\t" + getId() + "\tFirstName:\t" + getFirstName() + "\tLastName:\t" + getLastName() + "\tEmail:\t" + getEmail() + "\tAge:\t" + getAge() + "\tScores:\t" + getScores());
     }
 }
