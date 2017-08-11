@@ -1,0 +1,13 @@
+ID:	1	FirstName:	John	LastName:	Smith	Email:	John1989@gmail.com	Age:	20	Scores:	[88, 79, 59]
+ID:	2	FirstName:	Suzan	LastName:	Erickson	Email:	Erickson_1990@gmailcom	Age:	19	Scores:	[91, 72, 85]
+ID:	3	FirstName:	Jack	LastName:	Napoli	Email:	The_lawyer99yahoo.com	Age:	19	Scores:	[85, 84, 87]
+ID:	4	FirstName:	Erin	LastName:	Black	Email:	Erin.black@comcast.net	Age:	22	Scores:	[91, 98, 82]
+ID:	5	FirstName:	Clint	LastName:	Broadhead	Email:	cbroadh@wgu.edu	Age:	32	Scores:	[100, 100, 100]
+Invalid emails: [Erickson_1990@gmailcom, The_lawyer99yahoo.com]
+75
+82
+85
+90
+100
+Successfully removed student with the ID: 3
+Error: Unable to locate a student with given ID: 3

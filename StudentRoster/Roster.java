@@ -25,6 +25,7 @@ public class Roster
         for( String student : students )
         {
             //put comma separated data into an iterable format
+            
             String[] studentInfo = student.split(",");
             //start building a Student object
             int id = Integer.parseInt(studentInfo[0]);
@@ -39,7 +40,7 @@ public class Roster
             //pass info to Roster.add to create Student and add them to the roster
             Roster.add(id, firstName, lastName, email, age, grade1, grade2, grade3);
         }   
-        
+
         print_all();
         print_invalid_emails();
         //loop through the ArrayList and for each element:
@@ -86,8 +87,18 @@ public class Roster
      */
     public static void remove(int studentID)
     {
-        int index = studentList.indexOf(studentID);
-        System.out.println(index);
+        int indexOfStudent = getStudentIndexById(studentID);
+        
+        if( indexOfStudent != -1 )
+        {
+            studentList.remove(indexOfStudent);
+            System.out.println("Successfully removed student with the ID: " + studentID);
+        }
+        else
+        {
+            System.out.println("Error: Unable to locate a student with given ID: " + studentID);
+        }
+        
     }
     
     /**
@@ -110,18 +121,22 @@ public class Roster
      */
     public static void print_average_grade(int studentID)
     {
-        int index = studentList.indexOf(studentID);
-        Student student = studentList.get(index);
-        
-        ArrayList<Integer> scores = student.getScores();
-        
-        int sum = 0;
-        for(int score : scores)
+        int indexOfStudent = getStudentIndexById(studentID);
+        if( indexOfStudent != -1 )
         {
-            sum += score;
+            Student student = studentList.get(indexOfStudent);
+            ArrayList<Integer> scores = student.getScores();
+            
+            int sum = 0;
+            for(int score : scores)
+            {
+                sum += score;
+            }
+            
+            System.out.println( sum / scores.size() );
+        } else {
+            System.out.println("Error: Unable to locate student with given ID: " + studentID);
         }
-        
-        System.out.println( sum / 3 );
     }
     
     /**
@@ -130,6 +145,60 @@ public class Roster
      */
     public static void print_invalid_emails()
     {
+        ArrayList<String> invalidEmails = new ArrayList<String>();
         
+        for( Student student : studentList )
+        {
+            String email = student.getEmail();
+            
+            if(email.contains(" ") || !email.contains("@") || !email.contains("."))
+            {
+                invalidEmails.add(email);
+            }
+            
+        }
+        
+        if( invalidEmails.size() == 0 )
+        {
+            System.out.println("No invalid emails found.");
+        }
+        else
+        {
+            System.out.println("Invalid emails: " + invalidEmails.toString());
+        }
+    }
+    
+    /**
+     * Looks up a student in the studentList by ID
+     * 
+     * @param studentID is the id to look up
+     * @return index is the index of the student within the list
+     */
+    
+    private static int getStudentIndexById (int studentID)
+    {
+        //jump out of the loop as soon as the student is found
+        boolean found = false;
+        int i = 0;
+        int index = -1; //will return -1 if a student is not found
+        
+        while(!found)
+        {
+            Student student = studentList.get(i);
+            if(student.getId() == studentID)
+            {
+                found = true;
+                index = studentList.indexOf(student);
+            } else {
+                i++;
+            }
+            
+            if( i >= studentList.size() )
+            {
+                found = true;
+            }
+        }
+        
+        return index;
     }
 }
